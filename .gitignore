@@ -12,3 +12,5 @@ airflow.cfg
 airflow.db
 *.local.yml
 *.local.yaml
+compose.yaml
+compose.yaml.backup

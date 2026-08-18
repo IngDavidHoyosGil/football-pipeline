@@ -1,0 +1,1 @@
+TRUNCATE TABLE LEAGUES.PUBLIC.football_leagues_staging;

@@ -1,117 +1,133 @@
 EQUIPO,ID_TEAM
-Real Madrid,ffd4cd06
-Barcelona,ffd4cd07
-Real Betis,ffd4cd08
-Athletic Club,ffd4cd09
-Osasuna,ffd4cd0a
-Villarreal,ffd4cd0b
-Atlético Madrid,ffd4cd0c
-Real Sociedad,ffd4cd0d
-Valencia,ffd4cd0e
-Mallorca,ffd4f40d
-Gerona,ffd4f40e
-Rayo Vallecano,ffd4f40f
-Celta Vigo,ffd4f410
-Getafe,ffd4f411
-Sevilla FC,ffd4f412
-Almería,ffd4f413
-Espanyol,ffd4f414
-Real Valladolid,ffd4f415
-Cádiz,ffd4f416
-Elche,ffd4f417
-Arsenal,ffd4f418
-Manchester City,ffd4f419
-Tottenham Hotspur,ffd4f41a
-Brighton & Hove Albion,ffd4f41b
-Manchester United,ffd4f41c
-Fulham,ffd4f41d
-Chelsea,ffd4f41e
-Liverpool,ffd4f41f
-Brentford,ffd4f420
-Newcastle United,ffd4f421
-Leeds United,ffd4f422
-AFC Bournemouth,ffd4f423
-Everton,ffd4f424
-Southampton,ffd4f425
-Aston Villa,ffd4f426
-Crystal Palace,ffd4f427
-Wolverhampton Wanderers,ffd4f428
-West Ham United,ffd4f429
-Nottingham Forest,ffd4f42a
-Leicester City,ffd4f42b
-Napoli,ffd4f42c
-Atalanta,ffd4f42d
-Udinese,ffd4f42e
-Lazio,ffd4f42f
-AC Milan,ffd4f430
-AS Roma,ffd4f431
-Internazionale,ffd4f432
-Juventus,ffd4f433
-Torino,ffd4f434
-Fiorentina,ffd4f435
-Sassuolo,ffd4f436
-Spezia,ffd4f437
-Salernitana,ffd4f438
-Empoli,ffd4f439
-Lecce,ffd4f43a
-Bolonia,ffd4f43b
-Hellas Verona,ffd4f43c
-Monza,ffd4f43d
-Cremonese,ffd4f43e
-Sampdoria,ffd4f43f
-Paris Saint-Germain,ffd4f440
-Marseille,ffd4f441
-Lorient,ffd4f442
-Lens,ffd4f443
-AS Mónaco,ffd4f444
-NLyon,ffd4f445
-LLille,ffd4f446
-Stade Rennais,ffd4f447
-Montpellier,ffd4f448
-Troyes,ffd4f449
-rmontClermont Foot,ffd4f44a
-LToulouse,ffd4f44b
-ENice,ffd4f44c
-Angers,ffd4f44d
-Nantes,ffd4f44e
-AJ Auxerre,ffd4f44f
-MStade de Reims,ffd4f450
-AStrasbourg,ffd4f451
-Brest,ffd4f452
-AC Ajaccio,ffd4f453
-Benfica,ffd4f454
-GBraga,ffd4f455
-FC Porto,ffd4f456
-OPortimonense,ffd4f457
-Boavista,ffd4f458
-Casa Pia,ffd4f459
-Estoril,ffd4f45a
-Sporting CP,ffd4f45b
-Guimaraes,ffd4f45c
-CGil Vicente,ffd4f45d
-GD Chaves,ffd4f45e
-Arouca,ffd4f45f
-Rio Ave,ffd4f460
-Santa Clara,ffd4f461
-Vizela,ffd4f462
-FC Famalicao,ffd4f463
-Paços de Ferreira,ffd4f464
-Maritimo,ffd4f465
-PSV Eindhoven,ffd4f466
-XAjax Amsterdam,ffd4f467
-Z Alkmaar,ffd4f468
-Feyenoord Rotterdam,ffd4f469
-FC Twente,ffd4f46a
-Heerenveen,ffd4f46b
-RotterdamSparta Rotterdam,ffd4f46c
-RKC Waalwijk,ffd4f46d
-FC Utrecht,ffd4f46e
-Excelsior,ffd4f46f
-NEC Nijmegen,ffd4f470
-FC Groningen,ffd4f471
-AheadGo Ahead Eagles,ffd4f472
-Vitesse,ffd4f473
-VolendamFC Volendam,ffd4f474
-tunaFortuna Sittard,ffd4f475
-SC Cambuur,ffd4f476
-FC Emmen,ffd4f477
+AC Milan,e60d589d
+ADO Den Haag,6ef3590e
+AFC Bournemouth,8f0ee150
+AJ Auxerre,529e02d6
+AS Mónaco,165613fb
+AS Roma,b5e9555b
+Académico de Viseu,43482186
+Ajax Amsterdam,1a7153dc
+Alavés,db12fe24
+Alverca,42556646
+Angers,a450e905
+Arouca,4262af84
+Arsenal,5e5926a8
+Aston Villa,8aaa5c2a
+Atalanta,7773e6f7
+Athletic Club,03892907
+Atlético de Madrid,67a912d9
+Barcelona,070b2a73
+Bayer Leverkusen,2f18fea0
+Bayern Munich,d87ee7fa
+Benfica,52bffbec
+Bolonia,e74cc037
+Borussia Dortmund,1ccf1fdd
+Borussia Monchengladbach,39da517f
+Braga,3897a35c
+Brentford,e6930813
+Brest,8a9f0bae
+Brighton & Hove Albion,ddfbc6e0
+C.D. Nacional,4f7f8647
+CCasa Pia,96f92bcc
+CGil Vicente,de333f5e
+CRio Ave,0f03ca48
+CSanta Clara,324e667e
+Cagliari,a502a50f
+Celta Vigo,0ee55098
+Chelsea,27e820e3
+Como,85687c00
+Coventry City,98b0d239
+Crystal Palace,4e2d3da5
+Deportivo La Coruña,06f08789
+Eintracht Frankfurt,68395538
+Elche,8cf68fef
+Espanyol,72a43a92
+Estoril,89d08708
+Estrela,bfb233f1
+Everton,56cb72ce
+Excelsior,3b8996a2
+F. C. Augsburgo,789bff09
+FC Cologne,ed9bea31
+FC Famalicao,3e3a57c3
+FC Groningen,c81bc0a9
+FC Porto,e9873c62
+FC Twente,bb65a665
+FC Utrecht,9ef116a4
+FCU1. FC Union Berlin,072597ca
+Feyenoord Rotterdam,44e4e7f3
+Fiorentina,c5732e64
+Fortuna Sittard,1e596fe6
+Frosinone,bf849713
+Fulham,36faff1c
+Getafe,6d3ce424
+Go Ahead Eagles,b45bdbd8
+Génova,8fbb4e52
+Hamburg SV,e15e220c
+Heerenveen,fe0ef083
+Hull City,6cdf44b5
+Internazionale,8a9c90b8
+Ipswich Town,cbe5ddb5
+Juventus,df8fb49f
+Lazio,2beca7bd
+Le Havre AC,5f04dfd4
+Le Mans,883538d3
+Lecce,10fe4ff4
+Leeds United,6a018616
+Lens,9e74bd7d
+Levante,fc561b78
+Lille,146e84dc
+Liverpool,b8fe5275
+Lorient,020a7f65
+Lyon,c4d23c47
+M05Mainz,67d2741a
+Manchester City,4f605fcd
+Manchester United,b0d065ff
+Maritimo,cddca928
+Marseille,5a2d0b3d
+Monza,efc111ef
+Moreirense,50e33cc1
+Málaga,43b26b3f
+NEC Nijmegen,c7b3d34a
+Napoli,568a8a64
+Newcastle United,9ce510e8
+Nice,f2714e4b
+Nottingham Forest,9e436ed0
+Osasuna,334cbac2
+PEC Zwolle,495fd02c
+PSV Eindhoven,5b1f1126
+Paris FC,f9c28840
+Paris Saint-Germain,04888c83
+Parma,b7806cc1
+RB Leipzig,3c901cd1
+Racing Santander,e0fc6cfc
+Rayo Vallecano,d589d0de
+Real Betis,5591806d
+Real Madrid,6b352590
+Real Sociedad,e5b4c3ad
+S04Schalke 04,b792886b
+SC Cambuur,3c58aa70
+SC Freiburg,48c446df
+SC Paderborn 07,db8e15db
+SV Elversberg,3d0cb769
+Sassuolo,aa31dcf4
+Sevilla FC,270c4196
+Sp RotterdamSparta Rotterdam,c288c38f
+Sporting CP,9acafd47
+Stade Rennais,c396af0f
+Strasbourg,1ed6764f
+Sunderland,f0f92509
+TSG Hoffenheim,787fe1c6
+Telstar,d017e0b1
+Torino,87b96059
+Tottenham Hotspur,c16ad126
+Toulouse,96910548
+Troyes,e18eda70
+Udinese,736f6351
+Valencia,29ab75df
+Venezia,39293240
+VfB Stuttgart,863a7c5b
+Villarreal,1595e088
+Vitória de Guimaraes,23b7f732
+Werder Bremen,38412f1b
+Willem II,13cf1947
+Z Alkmaar,b1270efd

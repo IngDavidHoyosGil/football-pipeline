@@ -1,36 +1,106 @@
-
-import pandas as pd
-import time
 import random
-import os
+import re
+import time
+import uuid
 from datetime import datetime
 
-def get_data(url,liga):
+import pandas as pd
 
-    tiempo = [1,3,2]
-    time.sleep(random.choice(tiempo))
+def clean_team_name(team_name):
+    # Remove the position number
+    team_name = re.sub(r"^\d+", "", team_name)
+
+    # Handle 4-letter codes that repeat the beginning of the team name
+    match = re.match(r"^([A-Z]{4})([A-Z][a-z].*)$", team_name)
+
+    if match and match.group(1).lower() == match.group(2)[:4].lower():
+        team_name = match.group(2)
+
+    # Remove 3-letter ESPN codes
+    elif re.search(r"^[A-Z]{3}[A-Z]", team_name):
+        team_name = team_name[3:]
+
+    else:
+        # Handle repeated team names
+        for i in range(1, len(team_name)):
+            first_part = team_name[:i]
+            second_part = team_name[i:]
+
+            if second_part.startswith(first_part):
+                team_name = second_part
+                break
+
+    return team_name.strip()
+
+def build_team_table(leagues, existing_team_table=None):
+    teams = []
+
+    for _, row in leagues.iterrows():
+        raw = pd.read_html(row["URL"])
+
+        df_league = pd.concat(
+            [raw[0], raw[1]],
+            ignore_index=True,
+            axis=1
+        )
+
+        for team in df_league[0]:
+            teams.append(clean_team_name(team))
+
+    teams = sorted(set(teams))
+
+    if existing_team_table is None:
+        existing_team_table = pd.DataFrame(
+            columns=["EQUIPO", "ID_TEAM"]
+        )
+
+    existing_ids = dict(
+        zip(
+            existing_team_table["EQUIPO"],
+            existing_team_table["ID_TEAM"]
+        )
+    )
+
+    team_table = pd.DataFrame({
+        "EQUIPO": teams,
+        "ID_TEAM": [
+            existing_ids.get(team, str(uuid.uuid4())[:8])
+            for team in teams
+        ]
+    })
+
+    return team_table
+
+def get_data(url, league, delay_min, delay_max):
+
+    time.sleep(random.uniform(delay_min, delay_max))
+
     df = pd.read_html(url)
-    df=pd.concat([df[0],df[1]],ignore_index=True,axis=1)
-    df=df.rename(columns={0:'EQUIPO',1:'J', 2:'G', 3:'E', 4:'P', 5:'GF', 6:'GC', 7:'DIF', 8:'PTS'})
-    df['EQUIPO']=df['EQUIPO'].apply(lambda x: x[5:] if x[:2].isnumeric()==True else x[4:])
-    df['LIGA'] = liga
 
-    run_date = datetime.now()
-    run_date = run_date.strftime("%Y-%m-%d")
-    df['CREATED_AT'] = run_date
+    df = pd.concat(
+        [df[0], df[1]],
+        ignore_index=True,
+        axis=1
+    )
+
+    df = df.rename(
+        columns={
+            0: "EQUIPO",
+            1: "JUGADOS", 
+            2: "GANADOS", 
+            3: "EMPATADOS", 
+            4: "PERDIDOS", 
+            5: "GOLES_A_FAVOR", 
+            6: "GOLES_EN_CONTRA", 
+            7: "DIFERENCIA", 
+            8: "PUNTOS"
+        }
+    )
+    df["EQUIPO"] = df["EQUIPO"].apply(clean_team_name)
+
+    df["LIGA"] = league
+
+    df["CREATED_AT"] = datetime.now().strftime("%Y-%m-%d")
 
     return df
 
-def data_processing(df):
-
-    df_spain=get_data(df['URL'][0],df['LIGA'][0])
-    df_premier=get_data(df['URL'][1],df['LIGA'][1])
-    df_italy=get_data(df['URL'][2],df['LIGA'][2])
-    df_germany=get_data(df['URL'][3],df['LIGA'][3])
-    df_francia=get_data(df['URL'][4],df['LIGA'][4])
-    df_portugal=get_data(df['URL'][5],df['LIGA'][5])
-    df_holanda=get_data(df['URL'][6],df['LIGA'][6])
-
-    df_final=pd.concat([df_spain,df_premier,df_italy,df_francia,df_portugal,df_holanda],ignore_index=False)
-
-    return df_final
