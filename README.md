@@ -256,6 +256,98 @@ The Snowflake connection is configured in Airflow using:
 ```text
 snowflake_connection
 ```
+---
+
+## Snowflake Setup
+
+The Snowflake environment was initialized with the following components:
+
+- **Warehouse:** `normal_wh` (XSMALL)
+- **Database:** `LEAGUES`
+- **Schema:** `PUBLIC`
+- **Stage:** `DEMO_STAGE`
+- **Staging table:** `FOOTBALL_LEAGUES_STAGING`
+- **Final table:** `FOOTBALL_LEAGUES`
+
+The initial Snowflake setup includes the creation of the warehouse, database, internal stage, and target table.
+
+### Warehouse and Database
+
+```sql
+CREATE OR REPLACE WAREHOUSE normal_wh
+WAREHOUSE_SIZE = XSMALL
+INITIALLY_SUSPENDED = TRUE;
+
+CREATE DATABASE LEAGUES;
+
+USE WAREHOUSE normal_wh;
+USE DATABASE LEAGUES;
+USE SCHEMA PUBLIC;
+```
+
+### Stage
+
+An internal Snowflake stage is used as an intermediate storage location for the extracted CSV files.
+
+```sql
+CREATE STAGE demo_stage;
+```
+
+### Final Table
+
+The final table stores the normalized football standings:
+
+```sql
+CREATE OR REPLACE TABLE football_leagues (
+    ID_TEAM          VARCHAR(30) NOT NULL,
+    EQUIPO           VARCHAR(30) NOT NULL,
+    JUGADOS          INTEGER NOT NULL,
+    GANADOS          INTEGER NOT NULL,
+    EMPATADOS        INTEGER NOT NULL,
+    PERDIDOS         INTEGER NOT NULL,
+    GOLES_A_FAVOR    INTEGER NOT NULL,
+    GOLES_EN_CONTRA  INTEGER NOT NULL,
+    DIFERENCIA       INTEGER NOT NULL,
+    PUNTOS           INTEGER NOT NULL,
+    LIGA             VARCHAR(30) NOT NULL,
+    CREATED_AT       VARCHAR(30) NOT NULL
+);
+```
+
+The pipeline uses a separate staging table to temporarily hold the extracted data before it is merged into the final table.
+
+### Validation Queries
+
+Basic queries were used during development to validate the loaded data and inspect the Snowflake stage:
+
+```sql
+SELECT *
+FROM football_leagues
+WHERE LIGA = 'ALEMANIA';
+
+SELECT DISTINCT LIGA
+FROM football_leagues;
+
+LIST @demo_stage;
+```
+
+### Pipeline SQL
+
+The SQL queries used during pipeline execution are located in:
+
+```text
+dags/football_leagues/queries/
+```
+
+They handle:
+
+- Uploading extracted files to the Snowflake stage
+- Loading data into the staging table
+- Truncating staging data
+- Merging records into the final table
+- Removing processed files from the stage
+
+This separation between the initial Snowflake setup and the SQL executed by the Airflow DAG keeps the warehouse provisioning and pipeline processing responsibilities distinct.
 
 ---
 
