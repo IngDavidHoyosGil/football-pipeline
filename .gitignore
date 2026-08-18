@@ -14,3 +14,5 @@ airflow.db
 *.local.yaml
 compose.yaml
 compose.yaml.backup
+.pytest_cache/
+team_table.csv
