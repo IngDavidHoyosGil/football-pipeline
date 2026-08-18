@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 import os
+import pendulum
 import pandas as pd
 
 from airflow.models import DAG, Variable
@@ -89,8 +90,13 @@ with DAG(
         dag_id="football_leagues",
         default_args=default_arguments,
         description="Extract and load football league data into Snowflake" ,
-        start_date=datetime(2026, 8, 1),
-        schedule=None,
+        start_date=pendulum.datetime(
+            2026,
+            8,
+            1,
+            tz="America/Bogota"
+        ),
+        schedule="0 7 * * 1,4",
         tags=["tabla_espn", "football", "snowflake"],
         catchup=False
         ) as dag:
