@@ -316,6 +316,17 @@ CREATE OR REPLACE TABLE football_leagues (
 
 The pipeline uses a separate staging table to temporarily hold the extracted data before it is merged into the final table.
 
+### Staging Table
+
+A separate staging table with the same structure is used as an intermediate layer before merging the data into the final table.
+
+The staging table is populated by the Airflow pipeline and truncated before each ingestion cycle.
+
+```sql
+CREATE OR REPLACE TABLE football_leagues_staging
+LIKE football_leagues;
+```
+
 ### Validation Queries
 
 Basic queries were used during development to validate the loaded data and inspect the Snowflake stage:
